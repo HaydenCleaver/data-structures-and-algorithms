@@ -152,9 +152,14 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  // let names =[];
-  // Object.values(arr).forEach(entry =>(names.push(entry.name)));
-  // console.log(names);
+  let charName = arr.find(person => person.name === character);
+
+  for (let char of arr) {
+    if (char.name === character) {
+      charName = char;
+    }
+  }
+  return !!(Object.values(charName).length > 3);
 };
 
 /* ------------------------------------------------------------------------------------------------
